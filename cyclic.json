@@ -1,0 +1,20 @@
+{
+  "name": "annatar",
+  "builds": [
+    {
+      "src": "Dockerfile",
+      "use": "@cyclic/builders-docker",
+      "config": {
+        "runtime": "python3.11",
+        "libs": ["uvicorn"]
+      }
+    }
+  ],
+  "env": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONUNBUFFERED": "1",
+    "POETRY_VERSION": "1.7.1",
+    "DB_PATH": "/app/data/annatar.db",
+    "NUM_WORKERS": "4"
+  }
+}
